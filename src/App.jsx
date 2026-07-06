@@ -12,14 +12,9 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import Lightbox from './components/Lightbox';
 import Toast from './components/Toast';
-import VideoIntro from './components/VideoIntro';
 
 function App() {
   const [activeTab, setActiveTab] = useState('portraits');
-  
-  // Video Intro Splash States
-  const [isIntroActive, setIsIntroActive] = useState(true);
-  const [isIntroFading, setIsIntroFading] = useState(false);
 
   // Lightbox State
   const [lightboxIndex, setLightboxIndex] = useState(null);
@@ -42,14 +37,6 @@ function App() {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  const handleIntroComplete = () => {
-    setIsIntroFading(true);
-    // Allow the 800ms fadeout transition to run in CSS before fully unmounting
-    setTimeout(() => {
-      setIsIntroActive(false);
-    }, 800);
-  };
 
   const showToast = (message) => {
     setToastMessage(message);
@@ -95,10 +82,6 @@ function App() {
 
   return (
     <>
-      {isIntroActive && (
-        <VideoIntro isFading={isIntroFading} onComplete={handleIntroComplete} />
-      )}
-      
       <Header onBookClick={openBookingModal} />
       <Hero onBookClick={openBookingModal} />
       <Stats />
