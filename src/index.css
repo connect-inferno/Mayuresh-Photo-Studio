@@ -1478,8 +1478,8 @@ button, input, select, textarea {
     }
 }
 
-/* --- Video Intro Preloader --- */
-.video-intro-overlay {
+/* --- Video Intro Landing Page --- */
+.intro-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -1490,26 +1490,141 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    overflow: hidden;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s;
 }
 
-.video-intro-overlay.fade-out {
+.intro-overlay.phase-fading {
     opacity: 0;
+    pointer-events: none;
     visibility: hidden;
 }
 
-.video-intro-video {
+.intro-splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    animation: introFadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.intro-brand-container {
+    margin-bottom: 48px;
+}
+
+.intro-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--primary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.intro-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6.5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.intro-title .italic-accent {
+    font-style: italic;
+    color: var(--primary);
+    font-family: var(--font-serif);
+}
+
+.intro-divider {
+    width: 80px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 32px auto;
+}
+
+.intro-subtitle {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.intro-actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.intro-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 36px;
+    font-size: 14px;
+    border-radius: 40px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.intro-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--primary-glow);
+}
+
+.play-icon {
+    transition: transform 0.3s ease;
+}
+
+.intro-btn:hover .play-icon {
+    transform: scale(1.15) translateX(2px);
+}
+
+.intro-skip-link {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    padding-bottom: 2px;
+}
+
+.intro-skip-link:hover {
+    color: var(--text-white);
+    border-bottom-color: var(--primary);
+}
+
+.intro-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.intro-video-player {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.video-intro-skip {
+.intro-video-skip-btn {
     position: absolute;
     bottom: 40px;
     right: 40px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(8, 8, 8, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--text-white);
     padding: 12px 24px;
     font-size: 12px;
@@ -1519,13 +1634,35 @@ button, input, select, textarea {
     border-radius: 30px;
     cursor: pointer;
     z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: var(--transition-fast);
 }
 
-.video-intro-skip:hover {
+.intro-video-skip-btn:hover {
     background-color: var(--primary);
     border-color: var(--primary);
     color: var(--text-dark);
     transform: translateY(-2px);
+}
+
+.skip-arrow {
+    transition: transform 0.2s ease;
+}
+
+.intro-video-skip-btn:hover .skip-arrow {
+    transform: translateX(3px);
+}
+
+@keyframes introFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
