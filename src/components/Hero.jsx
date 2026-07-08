@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1600&q=80",
+  "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80"
+];
 
 export default function Hero({ onBookClick }) {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero-section">
-      <div 
-        className="hero-bg" 
-        style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=1600&q=80")' 
-        }}
-      />
+      {HERO_IMAGES.map((imgUrl, index) => (
+        <div 
+          key={index}
+          className={`hero-bg ${index === activeIdx ? 'active' : ''}`}
+          style={{ backgroundImage: `url("${imgUrl}")` }}
+        />
+      ))}
       <div className="hero-overlay"></div>
       <div className="container hero-container">
         <div className="hero-content">
