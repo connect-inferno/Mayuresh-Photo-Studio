@@ -12,8 +12,10 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import Lightbox from './components/Lightbox';
 import Toast from './components/Toast';
+import IntroLanding from './components/IntroLanding';
 
 function App() {
+  const [isIntroActive, setIsIntroActive] = useState(true);
   const [activeTab, setActiveTab] = useState('portraits');
 
   // Lightbox State
@@ -82,6 +84,7 @@ function App() {
 
   return (
     <>
+      {isIntroActive && <IntroLanding onComplete={() => setIsIntroActive(false)} />}
       <Header onBookClick={openBookingModal} />
       <Hero onBookClick={openBookingModal} />
       <Stats />

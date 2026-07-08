@@ -8,7 +8,7 @@ export default function Contact({ onSubmit }) {
           <span className="section-tag">GET IN TOUCH</span>
           <h2 className="serif-title">Let's Create Together.</h2>
           <p className="contact-intro">
-            Have a session in mind? Write to us or visit our studio in Sangli. We'd love to hear your ideas.
+            Have a session in mind? Write to us or visit our studios in Sangli. We'd love to hear your ideas.
           </p>
 
           <div className="contact-details-list">
@@ -19,8 +19,20 @@ export default function Contact({ onSubmit }) {
                 </svg>
               </div>
               <div className="detail-content">
-                <h5>Studio Address</h5>
+                <h5>Studio Address (Main)</h5>
                 <p>Mayuresh Photo Studio, Rajwada Road, near Maruti Temple, Sangli, Maharashtra - 416416</p>
+              </div>
+            </div>
+
+            <div className="contact-detail-item">
+              <div className="detail-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                </svg>
+              </div>
+              <div className="detail-content">
+                <h5>Studio Address (Branch)</h5>
+                <p>Shop No 1, Gandhi Nagar, Vishrambag, Sangli Miraj Kupwad, Maharashtra - 416416</p>
               </div>
             </div>
 
