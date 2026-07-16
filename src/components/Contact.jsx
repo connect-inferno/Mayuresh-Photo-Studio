@@ -20,7 +20,7 @@ export default function Contact({ onSubmit }) {
               </div>
               <div className="detail-content">
                 <h5>Studio Address (Main)</h5>
-                <p>Mayuresh Photo Studio, Rajwada Road, near Maruti Temple, Sangli, Maharashtra - 416416</p>
+                <p>Lumina Photography, Rajwada Road, near Maruti Temple, Sangli, Maharashtra - 416416</p>
               </div>
             </div>
 
@@ -44,7 +44,9 @@ export default function Contact({ onSubmit }) {
               </div>
               <div className="detail-content">
                 <h5>Call / WhatsApp</h5>
-                <p>+91 98765 43210</p>
+                <p>
+                  <a href="tel:+919876543210" className="contact-link">+91 98765 43210</a>
+                </p>
               </div>
             </div>
 
@@ -56,7 +58,9 @@ export default function Contact({ onSubmit }) {
               </div>
               <div className="detail-content">
                 <h5>Email Address</h5>
-                <p>info@mayureshphotostudio.com</p>
+                <p>
+                  <a href="mailto:info@mayureshphotostudio.com" className="contact-link">info@mayureshphotostudio.com</a>
+                </p>
               </div>
             </div>
           </div>
@@ -76,9 +80,9 @@ export default function Contact({ onSubmit }) {
             <div className="form-group">
               <label htmlFor="c-genre">Interested Service</label>
               <select id="c-genre" defaultValue="Portraits">
-                <option value="Portraits">Portraits & Headshots</option>
-                <option value="Wedding">Wedding & Bridal</option>
-                <option value="Newborn">Newborn & Family</option>
+                <option value="Portraits">Portraits &amp; Headshots</option>
+                <option value="Wedding">Wedding &amp; Bridal</option>
+                <option value="Newborn">Newborn &amp; Family</option>
                 <option value="Commercial">Commercial Photography</option>
               </select>
             </div>

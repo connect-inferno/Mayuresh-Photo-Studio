@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="container about-grid">
         <div className="about-image-container">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Lead Photographer Mayuresh" />
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Lead Photographer Arjun" />
           <div className="experience-badge">
             <span className="exp-num">15+</span>
             <span className="exp-text">Years of Craft</span>
@@ -15,7 +15,7 @@ export default function About() {
           <span className="section-tag">THE PHOTOGRAPHER</span>
           <h2 className="serif-title">Behind the Lens.</h2>
           <p className="about-intro-text">
-            Hi, I am Mayuresh. Since founding Mayuresh Photo Studio in Sangli in 2009, my goal has been to transcend traditional photography and paint stories with light.
+            Hi, I am Arjun. Since founding Lumina Photography in Sangli in 2009, my goal has been to transcend traditional photography and paint stories with light.
           </p>
           <p className="about-desc">
             We believe photography is not merely capturing pixels; it is preserving deep emotional bonds. Whether it is the soft whispers between a bride and groom during golden hour, the pure innocence of a newborn, or a striking headshot that captures your professional essence — our studio handles each session with visual meticulousness and custom composition.
@@ -30,6 +30,12 @@ export default function About() {
               <p>Our studio environment is built to put clients, babies, and couples completely at ease.</p>
             </div>
           </div>
+
+          {/* Signature pull-quote */}
+          <blockquote className="about-quote">
+            <p>"Every frame we shoot is a promise we keep — to make your memory last forever."</p>
+            <cite>— Arjun, Founder &amp; Lead Photographer</cite>
+          </blockquote>
         </div>
       </div>
     </section>

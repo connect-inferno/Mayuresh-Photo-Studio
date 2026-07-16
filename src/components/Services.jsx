@@ -1,6 +1,17 @@
 import React from 'react';
 import { SERVICES } from '../constants/data';
 
+const MINOR_SERVICES = [
+  { label: 'Headshots & Portraits', genre: 'portraits', icon: '🎭' },
+  { label: 'Baby Photography',      genre: 'newborn',   icon: '👶' },
+  { label: 'Bridal Photography',    genre: 'wedding',   icon: '💍' },
+  { label: "Children's Photography",genre: 'newborn',   icon: '🎈' },
+  { label: 'Commercial Photography',genre: 'commercial',icon: '📸' },
+  { label: 'Events & Parties',      genre: 'wedding',   icon: '🎉' },
+  { label: 'Maternity & Newborn',   genre: 'newborn',   icon: '🌸' },
+  { label: 'Passport Photography',  genre: 'portraits', icon: '🪪' },
+];
+
 export default function Services({ activeTab, setActiveTab, onBookClick, onMinorCategoryClick }) {
   return (
     <section id="services" className="services-section">
@@ -32,7 +43,7 @@ export default function Services({ activeTab, setActiveTab, onBookClick, onMinor
 
         {/* Tab Content Pane */}
         <div className="tab-content">
-          <div className="tab-panel active">
+          <div className="tab-panel active tab-fade">
             <div className="service-showcase">
               <div className="showcase-img-container">
                 <img src={SERVICES[activeTab].image} alt={`${SERVICES[activeTab].title} Signature Work`} />
@@ -59,30 +70,16 @@ export default function Services({ activeTab, setActiveTab, onBookClick, onMinor
           <span className="grid-sub">GENRES WE SPECIALIZE IN</span>
         </div>
         <div className="service-grid">
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('portraits')}>
-            <span>Headshots & Portraits</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('newborn')}>
-            <span>Baby Photography</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('wedding')}>
-            <span>Bridal Photography</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('newborn')}>
-            <span>Children's Photography</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('commercial')}>
-            <span>Commercial Photography</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('wedding')}>
-            <span>Events & Parties</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('newborn')}>
-            <span>Maternity & Newborn</span>
-          </div>
-          <div className="service-card-minor" onClick={() => onMinorCategoryClick('portraits')}>
-            <span>Passport Photography</span>
-          </div>
+          {MINOR_SERVICES.map((item, idx) => (
+            <div
+              key={idx}
+              className="service-card-minor"
+              onClick={() => onMinorCategoryClick(item.genre)}
+            >
+              <span className="card-minor-icon">{item.icon}</span>
+              <span>{item.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

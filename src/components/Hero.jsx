@@ -34,7 +34,7 @@ export default function Hero({ onBookClick }) {
           <span className="hero-badge">SANGLI, MAHARASHTRA — EST. 2009</span>
           <h1>Where Every <span className="italic-accent">Moment</span> Becomes Art.</h1>
           <p className="hero-desc">
-            Mayuresh Photo Studio — Sangli's trusted photography destination for weddings, portraits, newborns, and corporate imagery. Over 2,000 sessions and counting.
+            Lumina Photography — Sangli's trusted photography destination for weddings, portraits, newborns, and corporate imagery. Over 2,000 sessions and counting.
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary btn-arrow" onClick={() => onBookClick('portraits')}>
@@ -57,6 +57,23 @@ export default function Hero({ onBookClick }) {
             <span className="rating-text"><strong>4.3</strong> &nbsp;•&nbsp; 53 Google reviews</span>
           </div>
         </div>
+      </div>
+
+      <div className="hero-indicators">
+        {HERO_IMAGES.map((_, index) => (
+          <button
+            key={index}
+            className={`indicator-dot ${index === activeIdx ? 'active' : ''}`}
+            onClick={() => setActiveIdx(index)}
+          />
+        ))}
+      </div>
+
+      <div className="scroll-indicator">
+        <div className="mouse">
+          <div className="wheel"></div>
+        </div>
+        <span className="scroll-text">Scroll Down</span>
       </div>
     </section>
   );

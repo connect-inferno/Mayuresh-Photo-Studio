@@ -63,13 +63,13 @@ export const PORTFOLIO_ITEMS = [
 export const TESTIMONIALS = [
   {
     stars: '★★★★★',
-    text: '"Mayuresh captured our wedding perfectly! The lighting in the outdoor photos is breathtaking. He made us feel so comfortable throughout the day. Highly recommend their wedding packages!"',
+    text: '"Arjun captured our wedding perfectly! The lighting in the outdoor photos is breathtaking. He made us feel so comfortable throughout the day. Highly recommend their wedding packages!"',
     author: 'Amit & Neha K.',
     clientType: 'Wedding Photography Client'
   },
   {
     stars: '★★★★★',
-    text: '"Best photography studio in Sangli. We did a baby photoshoot for our daughter and the patience showed by Mayuresh and team was incredible. The photos are absolute masterpieces."',
+    text: '"Best photography studio in Sangli. We did a baby photoshoot for our daughter and the patience showed by Arjun and team was incredible. The photos are absolute masterpieces."',
     author: 'Priyanka Patil',
     clientType: 'Newborn & Family Client'
   },
