@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Header({ onBookClick }) {
   const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const getNavPath = (hash) => isHome ? hash : `/${hash}`;
 
   // Sticky header effect
   useEffect(() => {
@@ -21,12 +25,12 @@ export default function Header({ onBookClick }) {
     <>
       <header className={`main-header ${isHeaderShrunk ? 'shrink' : ''}`}>
         <div className="container header-container">
-          <a href="#" className="logo">
+          <Link to="/" className="logo">
             <svg className="camera-icon" viewBox="0 0 24 24" width="24" height="24">
               <path fill="currentColor" d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
             </svg>
-            <span>Lumina<span> Photography</span></span>
-          </a>
+            <span>Aminesh<span> Photography</span></span>
+          </Link>
 
           {/* Hamburger Icon */}
           <button 
@@ -42,11 +46,11 @@ export default function Header({ onBookClick }) {
           {/* Nav Links */}
           <nav className="nav-menu">
             <ul>
-              <li><a href="#services">SERVICES</a></li>
-              <li><a href="#portfolio">PORTFOLIO</a></li>
-              <li><a href="#about">ABOUT</a></li>
-              <li><a href="#reviews">REVIEWS</a></li>
-              <li><a href="#contact">CONTACT</a></li>
+              <li><a href={getNavPath('#services')}>SERVICES</a></li>
+              <li><a href={getNavPath('#portfolio')}>PORTFOLIO</a></li>
+              <li><a href={getNavPath('#about')}>ABOUT</a></li>
+              <li><a href={getNavPath('#reviews')}>REVIEWS</a></li>
+              <li><a href={getNavPath('#contact')}>CONTACT</a></li>
             </ul>
           </nav>
 
@@ -64,11 +68,11 @@ export default function Header({ onBookClick }) {
       <div className={`mobile-drawer ${isMobileMenuOpen ? 'active' : ''}`}>
         <nav className="mobile-nav">
           <ul>
-            <li><a href="#services" onClick={() => setIsMobileMenuOpen(false)}>SERVICES</a></li>
-            <li><a href="#portfolio" onClick={() => setIsMobileMenuOpen(false)}>PORTFOLIO</a></li>
-            <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a></li>
-            <li><a href="#reviews" onClick={() => setIsMobileMenuOpen(false)}>REVIEWS</a></li>
-            <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a></li>
+            <li><a href={getNavPath('#services')} onClick={() => setIsMobileMenuOpen(false)}>SERVICES</a></li>
+            <li><a href={getNavPath('#portfolio')} onClick={() => setIsMobileMenuOpen(false)}>PORTFOLIO</a></li>
+            <li><a href={getNavPath('#about')} onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a></li>
+            <li><a href={getNavPath('#reviews')} onClick={() => setIsMobileMenuOpen(false)}>REVIEWS</a></li>
+            <li><a href={getNavPath('#contact')} onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a></li>
             <li>
               <button 
                 className="btn btn-primary btn-block" 

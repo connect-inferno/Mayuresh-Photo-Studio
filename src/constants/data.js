@@ -21,6 +21,17 @@ export const SERVICES = {
   }
 };
 
+export const MINOR_SERVICES = [
+  { slug: 'headshots-and-portraits', label: 'Headshots & Portraits', genre: 'portraits', icon: '🎭', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'baby-photography', label: 'Baby Photography', genre: 'newborn', icon: '👶', image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'bridal-photography', label: 'Bridal Photography', genre: 'wedding', icon: '💍', image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'childrens-photography', label: "Children's Photography", genre: 'newborn', icon: '🎈', image: 'https://images.unsplash.com/photo-1471286174890-9c11241ce968?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'commercial-photography', label: 'Commercial Photography', genre: 'commercial', icon: '📸', image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'events-and-parties', label: 'Events & Parties', genre: 'wedding', icon: '🎉', image: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'maternity-and-newborn', label: 'Maternity & Newborn', genre: 'newborn', icon: '🌸', image: 'https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&fit=crop&w=1200&q=80' },
+  { slug: 'passport-photography', label: 'Passport Photography', genre: 'portraits', icon: '🪪', image: 'https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&w=1200&q=80' },
+];
+
 export const PORTFOLIO_ITEMS = [
   {
     category: 'PORTRAITS',
@@ -69,7 +80,7 @@ export const TESTIMONIALS = [
   },
   {
     stars: '★★★★★',
-    text: '"Best photography studio in Sangli. We did a baby photoshoot for our daughter and the patience showed by Arjun and team was incredible. The photos are absolute masterpieces."',
+    text: '"Best photography studio in Kolhapur. We did a baby photoshoot for our daughter and the patience showed by Arjun and team was incredible. The photos are absolute masterpieces."',
     author: 'Priyanka Patil',
     clientType: 'Newborn & Family Client'
   },

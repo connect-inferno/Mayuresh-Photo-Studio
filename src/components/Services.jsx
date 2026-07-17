@@ -1,16 +1,7 @@
 import React from 'react';
-import { SERVICES } from '../constants/data';
+import { Link } from 'react-router-dom';
+import { SERVICES, MINOR_SERVICES } from '../constants/data';
 
-const MINOR_SERVICES = [
-  { label: 'Headshots & Portraits', genre: 'portraits', icon: '🎭' },
-  { label: 'Baby Photography',      genre: 'newborn',   icon: '👶' },
-  { label: 'Bridal Photography',    genre: 'wedding',   icon: '💍' },
-  { label: "Children's Photography",genre: 'newborn',   icon: '🎈' },
-  { label: 'Commercial Photography',genre: 'commercial',icon: '📸' },
-  { label: 'Events & Parties',      genre: 'wedding',   icon: '🎉' },
-  { label: 'Maternity & Newborn',   genre: 'newborn',   icon: '🌸' },
-  { label: 'Passport Photography',  genre: 'portraits', icon: '🪪' },
-];
 
 export default function Services({ activeTab, setActiveTab, onBookClick, onMinorCategoryClick }) {
   return (
@@ -71,14 +62,15 @@ export default function Services({ activeTab, setActiveTab, onBookClick, onMinor
         </div>
         <div className="service-grid">
           {MINOR_SERVICES.map((item, idx) => (
-            <div
+            <Link
               key={idx}
+              to={`/service/${item.slug}`}
               className="service-card-minor"
-              onClick={() => onMinorCategoryClick(item.genre)}
+              style={{ textDecoration: 'none', color: 'inherit' }}
             >
               <span className="card-minor-icon">{item.icon}</span>
               <span>{item.label}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
