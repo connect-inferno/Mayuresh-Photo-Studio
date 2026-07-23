@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { PORTFOLIO_ITEMS } from '../constants/data';
+import { Link } from 'react-router-dom';
+import { PORTFOLIO_CATEGORIES } from '../constants/data';
 
-export default function Portfolio({ onImageClick }) {
+export default function Portfolio() {
   const gridRef = useRef(null);
 
   useEffect(() => {
@@ -28,24 +29,25 @@ export default function Portfolio({ onImageClick }) {
     <section id="portfolio" className="portfolio-section">
       <div className="container">
         <span className="section-tag">OUR WORK</span>
-        <h2 className="serif-title">A Glimpse Into Our Studio.</h2>
+        <h2 className="serif-title">Explore Categories.</h2>
 
         <div className="portfolio-grid" ref={gridRef}>
-          {PORTFOLIO_ITEMS.map((item, idx) => (
-            <div 
-              key={idx} 
-              className={`portfolio-item ${item.class}`}
-              style={{ '--reveal-delay': `${(idx % 3) * 100}ms` }}
-              onClick={() => onImageClick(idx)}
+          {PORTFOLIO_CATEGORIES.map((cat, idx) => (
+            <Link 
+              key={idx}
+              to={`/gallery/${cat.id}`}
+              className="portfolio-item split-reveal-item"
+              style={{ '--reveal-delay': `${(idx % 3) * 200}ms` }}
             >
-              <img src={item.image} alt={item.title} />
+              <div className="split-reveal-cover"></div>
+              <img src={cat.image} alt={cat.title} />
               <div className="portfolio-hover">
                 <div className="hover-content">
-                  <span>{item.category}</span>
-                  <h4>{item.title}</h4>
+                  <span>{cat.postCount} PHOTOS</span>
+                  <h4>{cat.title}</h4>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

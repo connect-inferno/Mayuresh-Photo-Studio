@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SERVICES } from '../constants/data';
 
 const MINOR_SERVICES = [
@@ -13,18 +13,35 @@ const MINOR_SERVICES = [
 ];
 
 export default function Services({ activeTab, setActiveTab, onBookClick, onMinorCategoryClick }) {
+  const introRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    if (introRef.current) {
+      observer.observe(introRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="services" className="services-section">
       <div className="container">
-        <div className="services-intro">
-          <div className="intro-left">
-            <span className="section-tag">WHAT WE OFFER</span>
-            <h2 className="serif-title">Every Story, Beautifully Told.</h2>
+        <div className="animated-stats-container" ref={introRef}>
+          <div className="stats-watermark">EST 2009</div>
+          <div className="stat-slide right">
+            <span className="orange-text">15</span> YEARS. <span className="orange-text">2000+</span> WEDDINGS.
           </div>
-          <div className="intro-right">
-            <p className="section-para">
-              From intimate newborn sessions to grand wedding productions — our studio handles every genre with the same obsessive care.
-            </p>
+          <div className="stat-slide left">
+            ACROSS <span className="italic-accent">MAHARASHTRA.</span>
           </div>
         </div>
 
