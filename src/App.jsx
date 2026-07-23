@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import Toast from './components/Toast';
+import Lightbox from './components/Lightbox';
 
 import { PORTFOLIO_ITEMS } from './constants/data';
 import HomePage from './pages/HomePage';
 import ServicePage from './pages/ServicePage';
+import CategoryGallery from './pages/CategoryGallery';
 
 function App() {
   // Lightbox State
@@ -56,7 +58,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <>
       <Header onBookClick={openBookingModal} />
       
       <main style={{ minHeight: '100vh' }}>
@@ -79,6 +81,10 @@ function App() {
                 setLightboxIndex={setLightboxIndex} 
               />
             } 
+          />
+          <Route 
+            path="/gallery/:category" 
+            element={<CategoryGallery />} 
           />
         </Routes>
       </main>
@@ -104,7 +110,7 @@ function App() {
         isVisible={isToastVisible} 
         message={toastMessage} 
       />
-    </BrowserRouter>
+    </>
   );
 }
 

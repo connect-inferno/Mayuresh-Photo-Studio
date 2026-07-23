@@ -71,6 +71,51 @@ export const PORTFOLIO_ITEMS = [
   }
 ];
 
+export const PORTFOLIO_CATEGORIES = [
+  {
+    id: 'weddings',
+    title: 'Wedding & Bridal',
+    image: 'https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=800&h=500&q=80',
+    postCount: 9,
+    desc: 'Capturing eternal moments of love, joy, and emotional union on your special day.'
+  },
+  {
+    id: 'pre-wedding',
+    title: 'Pre-Wedding Shoots',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&h=500&q=80',
+    postCount: 9,
+    desc: 'Romantic stories framed in dramatic landscapes and intimate portraits.'
+  },
+  {
+    id: 'birthdays',
+    title: 'Birthdays & Celebrations',
+    image: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&h=600&q=80',
+    postCount: 9,
+    desc: 'Vibrant and candid memories of joyous celebrations and birthday parties.'
+  },
+  {
+    id: 'portraits',
+    title: 'Portraits & Headshots',
+    image: 'https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?auto=format&fit=crop&w=800&h=500&q=80',
+    postCount: 12,
+    desc: 'Timeless studio headshots and high-end editorial portraits.'
+  },
+  {
+    id: 'maternity',
+    title: 'Maternity & Newborn',
+    image: 'https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?auto=format&fit=crop&w=800&h=500&q=80',
+    postCount: 6,
+    desc: 'Heartwarming maternity and gentle newborn photography sessions.'
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial & Branding',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&h=500&q=80',
+    postCount: 9,
+    desc: 'High-impact commercial photography for brands, products, and corporate events.'
+  }
+];
+
 export const TESTIMONIALS = [
   {
     stars: '★★★★★',

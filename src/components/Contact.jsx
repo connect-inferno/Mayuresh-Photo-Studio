@@ -47,7 +47,7 @@ export default function Contact({ onSubmit }) {
               <div className="detail-content">
                 <h5>Email Address</h5>
                 <p>
-                  <a href="mailto:info@amineshphotography.com" className="contact-link">info@amineshphotography.com</a>
+                  <a href="mailto:info@xyzphotography.com" className="contact-link">info@xyzphotography.com</a>
                 </p>
               </div>
             </div>

@@ -58,7 +58,7 @@ export default function CategoryGallery() {
             </div>
             <div className="gallery-stats">
               <span><strong>{catData.postCount}</strong> posts</span>
-              <span><strong>Mayuresh</strong> Photo Studio</span>
+              <span><strong>XYZ</strong> Photography</span>
               <span><strong>Sangli</strong>, Maharashtra</span>
             </div>
             <p className="gallery-bio">
