@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const STATS = [
-  { value: 4.3, label: 'GOOGLE RATING', suffix: '', decimals: 1 },
-  { value: 53, label: 'HAPPY REVIEWS', suffix: '+', decimals: 0 },
+  { value: 4.9, label: 'GOOGLE RATING', suffix: '', decimals: 1 },
+  { value: 226, label: 'HAPPY REVIEWS', suffix: '+', decimals: 0 },
   { value: 2000, label: 'SESSIONS DONE', suffix: '+', decimals: 0 },
-  { value: 15, label: 'YEARS IN SANGLI', suffix: '+', decimals: 0 },
+  { value: 15, label: 'YEARS IN KOLHAPUR', suffix: '+', decimals: 0 },
 ];
 
 function useCountUp(target, decimals, duration = 1800) {
@@ -66,7 +66,7 @@ export default function Stats() {
           <span className="section-tag">OUR JOURNEY IN NUMBERS</span>
           <h2 className="serif-title">Trust, Expertise, and Artistry.</h2>
           <p className="stats-desc">
-            Since 2009, Lumina Photography has been Sangli's trusted destination for high-end photography. 
+            Since 2009, Aminesh Photography has been Kolhapur's trusted destination for high-end photography. 
             We blend classic camera techniques with modern styling to craft milestones that endure.
           </p>
         </div>

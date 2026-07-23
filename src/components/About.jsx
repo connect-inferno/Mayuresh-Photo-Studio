@@ -15,7 +15,7 @@ export default function About() {
           <span className="section-tag">THE PHOTOGRAPHER</span>
           <h2 className="serif-title">Behind the Lens.</h2>
           <p className="about-intro-text">
-            Hi, I am Arjun. Since founding Lumina Photography in Sangli in 2009, my goal has been to transcend traditional photography and paint stories with light.
+            Hi, I am Arjun. Since founding Aminesh Photography in Kolhapur in 2009, my goal has been to transcend traditional photography and paint stories with light.
           </p>
           <p className="about-desc">
             We believe photography is not merely capturing pixels; it is preserving deep emotional bonds. Whether it is the soft whispers between a bride and groom during golden hour, the pure innocence of a newborn, or a striking headshot that captures your professional essence — our studio handles each session with visual meticulousness and custom composition.

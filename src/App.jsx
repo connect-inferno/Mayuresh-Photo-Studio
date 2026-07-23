@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import Toast from './components/Toast';
-import IntroLanding from './components/IntroLanding';
-import Home from './pages/Home';
-import CategoryGallery from './pages/CategoryGallery';
+
+import { PORTFOLIO_ITEMS } from './constants/data';
+import HomePage from './pages/HomePage';
+import ServicePage from './pages/ServicePage';
 
 function App() {
-  const [isIntroActive, setIsIntroActive] = useState(true);
+  // Lightbox State
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const handlePrevLightbox = () => {
+    setLightboxIndex((prev) => (prev === 0 ? PORTFOLIO_ITEMS.length - 1 : prev - 1));
+  };
+
+  const handleNextLightbox = () => {
+    setLightboxIndex((prev) => (prev === PORTFOLIO_ITEMS.length - 1 ? 0 : prev + 1));
+  };
 
   // Booking Modal State
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -46,14 +56,30 @@ function App() {
   };
 
   return (
-    <>
-      {isIntroActive && <IntroLanding onComplete={() => setIsIntroActive(false)} />}
+    <BrowserRouter>
       <Header onBookClick={openBookingModal} />
       
-      <main>
+      <main style={{ minHeight: '100vh' }}>
         <Routes>
-          <Route path="/" element={<Home onBookClick={openBookingModal} onContactSubmit={handleContactSubmit} />} />
-          <Route path="/gallery/:category" element={<CategoryGallery />} />
+          <Route 
+            path="/" 
+            element={
+              <HomePage 
+                openBookingModal={openBookingModal} 
+                setLightboxIndex={setLightboxIndex} 
+                handleContactSubmit={handleContactSubmit} 
+              />
+            } 
+          />
+          <Route 
+            path="/service/:slug" 
+            element={
+              <ServicePage 
+                openBookingModal={openBookingModal} 
+                setLightboxIndex={setLightboxIndex} 
+              />
+            } 
+          />
         </Routes>
       </main>
 
@@ -67,11 +93,18 @@ function App() {
         onSubmit={handleBookingSubmit} 
       />
       
+      <Lightbox 
+        index={lightboxIndex} 
+        onClose={() => setLightboxIndex(null)} 
+        onPrev={handlePrevLightbox}
+        onNext={handleNextLightbox}
+      />
+      
       <Toast 
         isVisible={isToastVisible} 
         message={toastMessage} 
       />
-    </>
+    </BrowserRouter>
   );
 }
 

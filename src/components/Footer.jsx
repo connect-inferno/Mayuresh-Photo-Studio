@@ -10,11 +10,11 @@ export default function Footer() {
             <svg className="camera-icon" viewBox="0 0 24 24" width="24" height="24">
               <path fill="currentColor" d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
             </svg>
-            <span>Mayuresh<span> Photo Studio</span></span>
+            <span>Aminesh<span> Photography</span></span>
           </a>
-          <p>Capturing life's most precious events with visual artistry and technical excellence. Est. 2009 in Sangli.</p>
+          <p>Capturing life's most precious events with visual artistry and technical excellence. Est. 2009 in Kolhapur.</p>
           <a
-            href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20photography%20session%20at%20Mayuresh%20Photo%20Studio."
+            href="https://wa.me/919876543210?text=Hi%2C%20I%20would%20like%20to%20book%20a%20photography%20session%20at%20Aminesh%20Photography."
             target="_blank"
             rel="noopener noreferrer"
             className="footer-whatsapp-btn"
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom text-center">
-        <p>&copy; 2026 Lumina Photography. All Rights Reserved. Built with Visual Excellence.</p>
+        <p>&copy; 2026 Aminesh Photography. All Rights Reserved. Built with Visual Excellence.</p>
       </div>
     </footer>
   );
