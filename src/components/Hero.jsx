@@ -11,23 +11,31 @@ const HERO_IMAGES = [
 
 export default function Hero({ onBookClick }) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [prevIdx, setPrevIdx] = useState(HERO_IMAGES.length - 1);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % HERO_IMAGES.length);
+      setActiveIdx((prev) => {
+        setPrevIdx(prev);
+        return (prev + 1) % HERO_IMAGES.length;
+      });
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="hero-section">
-      {HERO_IMAGES.map((imgUrl, index) => (
-        <div 
-          key={index}
-          className={`hero-bg ${index === activeIdx ? 'active' : ''}`}
-          style={{ backgroundImage: `url("${imgUrl}")` }}
-        />
-      ))}
+      {HERO_IMAGES.map((imgUrl, index) => {
+        let className = 'hero-bg';
+        if (index === activeIdx) className += ' active';
+        else if (index === prevIdx) className += ' prev';
+        
+        return (
+          <div key={index} className={className}>
+            <div className="hero-img" style={{ backgroundImage: `url("${imgUrl}")` }} />
+          </div>
+        );
+      })}
       <div className="hero-overlay"></div>
       <div className="container hero-container">
         <div className="hero-content">
@@ -59,21 +67,12 @@ export default function Hero({ onBookClick }) {
         </div>
       </div>
 
-      <div className="hero-indicators">
-        {HERO_IMAGES.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator-dot ${index === activeIdx ? 'active' : ''}`}
-            onClick={() => setActiveIdx(index)}
-          />
-        ))}
-      </div>
+
 
       <div className="scroll-indicator">
         <div className="mouse">
           <div className="wheel"></div>
         </div>
-        <span className="scroll-text">Scroll Down</span>
       </div>
     </section>
   );

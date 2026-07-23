@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
-import Lightbox from './components/Lightbox';
 import Toast from './components/Toast';
 
 import { PORTFOLIO_ITEMS } from './constants/data';

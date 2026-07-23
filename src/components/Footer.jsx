@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Footer({ onMinorCategoryClick }) {
+export default function Footer() {
   return (
     <footer className="main-footer">
       <div className="container footer-grid">
@@ -27,20 +28,22 @@ export default function Footer({ onMinorCategoryClick }) {
         <div className="footer-links">
           <h5>Navigation</h5>
           <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#reviews">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#portfolio">Portfolio</a></li>
+            <li><a href="/#about">About us</a></li>
+            <li><a href="/#reviews">Testimonials</a></li>
+            <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
         <div className="footer-links">
-          <h5>Services</h5>
+          <h5>Gallery</h5>
           <ul>
-            <li><a href="#services" onClick={() => onMinorCategoryClick('portraits')}>Portraits</a></li>
-            <li><a href="#services" onClick={() => onMinorCategoryClick('wedding')}>Wedding Photography</a></li>
-            <li><a href="#services" onClick={() => onMinorCategoryClick('newborn')}>Newborn &amp; Family</a></li>
-            <li><a href="#services" onClick={() => onMinorCategoryClick('commercial')}>Commercial Shoot</a></li>
+            <li><Link to="/gallery/weddings">Weddings</Link></li>
+            <li><Link to="/gallery/pre-wedding">Pre-Wedding</Link></li>
+            <li><Link to="/gallery/birthdays">Birthdays</Link></li>
+            <li><Link to="/gallery/portraits">Portraits</Link></li>
+            <li><Link to="/gallery/maternity">Maternity</Link></li>
+            <li><Link to="/gallery/commercial">Commercial</Link></li>
           </ul>
         </div>
         <div className="footer-social">
