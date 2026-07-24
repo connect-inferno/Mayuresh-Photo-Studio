@@ -39,10 +39,9 @@ export default function Hero({ onBookClick }) {
       <div className="hero-overlay"></div>
       <div className="container hero-container">
         <div className="hero-content">
-          <span className="hero-badge">KOLHAPUR, MAHARASHTRA — EST. 2009</span>
           <h1>Where Every <span className="italic-accent">Moment</span> Becomes Art.</h1>
           <p className="hero-desc">
-            XYZ Photography — Kolhapur's trusted photography destination for weddings, portraits, newborns, and corporate imagery. Over 2,000 sessions and counting.
+            Mayuresh Photography — Sangli's trusted photography destination for weddings, portraits, newborns, and corporate imagery. Over 2,000 sessions and counting.
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary btn-arrow" onClick={() => onBookClick('portraits')}>
