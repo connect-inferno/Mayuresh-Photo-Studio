@@ -8,7 +8,7 @@ export default function Contact({ onSubmit }) {
           <span className="section-tag">GET IN TOUCH</span>
           <h2 className="serif-title">Let's Create Together.</h2>
           <p className="contact-intro">
-            Have a session in mind? Write to us or visit our studio in Kolhapur. We'd love to hear your ideas.
+            Have a session in mind? Write to us or visit our studios in Sangli. We'd love to hear your ideas.
           </p>
 
           <div className="contact-details-list">
@@ -19,8 +19,12 @@ export default function Contact({ onSubmit }) {
                 </svg>
               </div>
               <div className="detail-content">
-                <h5>Studio Address</h5>
-                <p>Datt Mandir, Isolation Hospital Rd, Nehru Nagar, Kolhapur, Maharashtra 416012</p>
+                <h5>Studio Addresses</h5>
+                <div className="address-list">
+                  <p><strong>Branch 1:</strong> Dhamani Rd, Jineshwar Colony, Vishrambag, Sangli, Sangli Miraj Kupwad, Maharashtra 416416</p>
+                  <p><strong>Branch 2:</strong> Ushakal Hospital Rd, near radha krishna mandir, Sangli, Dattanagar, Sangli, Sangli Miraj Kupwad, Maharashtra 416416</p>
+                  <p><strong>Branch 3:</strong> Shop No 1, Gandhi Nagar, Vishrambag, Sangli Miraj Kupwad, Maharashtra 416416</p>
+                </div>
               </div>
             </div>
 
