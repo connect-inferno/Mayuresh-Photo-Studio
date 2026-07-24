@@ -44,29 +44,12 @@ export default function CategoryGallery() {
           <span>Back to Portfolio</span>
         </Link>
 
-        {/* Instagram-style profile header */}
-        <div className="gallery-header">
-          <img 
-            src={catData.image} 
-            alt={catData.title}
-            className="gallery-profile-pic"
-          />
-          <div className="gallery-info">
-            <div className="gallery-info-top">
-              <h1>{catData.title}</h1>
-              <span className="gallery-category-badge">{catData.id.toUpperCase()}</span>
-            </div>
-            <div className="gallery-stats">
-              <span><strong>{catData.postCount}</strong> posts</span>
-              <span><strong>XYZ</strong> Photography</span>
-              <span><strong>Sangli</strong>, Maharashtra</span>
-            </div>
-            <p className="gallery-bio">
-              📸 {catData.desc}<br/>
-              🏆 15+ Years of Excellence<br/>
-              📍 Sangli, Maharashtra
-            </p>
-          </div>
+        {/* Minimal Editorial Header */}
+        <div className="gallery-editorial-header">
+          <span className="gallery-editorial-tag">{catData.id.replace('-', ' ').toUpperCase()}</span>
+          <h1 className="gallery-editorial-title">{catData.title}</h1>
+          <div className="gallery-editorial-divider"></div>
+          <p className="gallery-editorial-desc">{catData.desc}</p>
         </div>
 
         {/* Grid/Tabs separator like Instagram */}
@@ -91,10 +74,6 @@ export default function CategoryGallery() {
               onClick={() => setLightboxIndex(idx)}
             >
               <img src={img} alt={`${catData.title} photo ${idx + 1}`} loading="lazy" />
-              <div className="gallery-item-hover">
-                <span>❤️ {Math.floor(Math.random() * 300 + 50)}</span>
-                <span>💬 {Math.floor(Math.random() * 40 + 5)}</span>
-              </div>
             </div>
           ))}
         </div>

@@ -66,7 +66,7 @@ export default function Stats() {
           <span className="section-tag">OUR JOURNEY IN NUMBERS</span>
           <h2 className="serif-title">Trust, Expertise, and Artistry.</h2>
           <p className="stats-desc">
-            Since 2009, XYZ Photography has been Kolhapur's trusted destination for high-end photography. 
+            Since 2009, Mayuresh Photography has been Sangli's trusted destination for high-end photography. 
             We blend classic camera techniques with modern styling to craft milestones that endure.
           </p>
         </div>

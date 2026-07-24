@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TESTIMONIALS } from '../constants/data';
 import Hero from '../components/Hero';
-import Stats from '../components/Stats';
-import Services from '../components/Services';
+
+
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Reviews from '../components/Reviews';
@@ -13,8 +13,8 @@ export default function HomePage({
   setLightboxIndex, 
   handleContactSubmit 
 }) {
-  const [activeTab, setActiveTab] = useState('portraits');
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
+  const introRef = useRef(null);
 
   // Review Carousel Auto-play
   useEffect(() => {
@@ -24,24 +24,43 @@ export default function HomePage({
     return () => clearInterval(timer);
   }, []);
 
-  const handleMinorCategoryClick = (genre) => {
-    setActiveTab(genre);
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
+  // Animated stats intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    if (introRef.current) {
+      observer.observe(introRef.current);
     }
-  };
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
       <Hero onBookClick={openBookingModal} />
-      <Stats />
-      <Services 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        onBookClick={openBookingModal} 
-        onMinorCategoryClick={handleMinorCategoryClick} 
-      />
+
+      {/* Animated Stats Banner */}
+      <section className="services-section">
+        <div className="container">
+          <div className="animated-stats-container" ref={introRef}>
+            <div className="stats-watermark">EST 2009</div>
+            <div className="stat-slide right">
+              <span className="orange-text">15</span> YEARS. <span className="orange-text">2000+</span> WEDDINGS.
+            </div>
+            <div className="stat-slide left">
+              ACROSS <span className="italic-accent">MAHARASHTRA.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Portfolio onImageClick={setLightboxIndex} />
       <About />
       <Reviews 
