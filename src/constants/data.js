@@ -125,7 +125,7 @@ export const TESTIMONIALS = [
   },
   {
     stars: '★★★★★',
-    text: '"Best photography studio in Kolhapur. We did a baby photoshoot for our daughter and the patience showed by Arjun and team was incredible. The photos are absolute masterpieces."',
+    text: '"Best photography studio in Sangli. We did a baby photoshoot for our daughter and the patience showed by Arjun and team was incredible. The photos are absolute masterpieces."',
     author: 'Priyanka Patil',
     clientType: 'Newborn & Family Client'
   },
